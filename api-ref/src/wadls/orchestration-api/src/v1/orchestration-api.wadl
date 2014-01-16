@@ -131,6 +131,64 @@
             title="List stack data">
             <para role="shortdesc">Lists active stacks.</para>
         </wadl:doc>
+        <request>
+            <param name="status" style="query" required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <para>
+                        Filters the stack list by the given status. It
+                        can be used multiple times for filtering by more
+                        than one status.
+                    </para>
+                </wadl:doc>
+            </param>
+            <param name="name" style="query" required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <para>
+                        Filters the stack list by the given name.
+                    </para>
+                </wadl:doc>
+            </param>
+            <param name="limit" style="query" required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <para>
+                        The number of stacks to display in a single
+                        page.
+                    </para>
+                </wadl:doc>
+            </param>
+            <param name="marker" style="query" required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <para>
+                        UUID of the stack that marks the end of the
+                        previous result set. This will return stacks
+                        that appear after the given UUID.
+                    </para>
+                </wadl:doc>
+            </param>
+            <param name="sort_keys" style="query" required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <para>
+                        Sort the list by any of the following
+                        attributes: name | status |
+                        created_at | updated_at
+                    </para>
+                </wadl:doc>
+            </param>
+            <param name="sort_dir" style="query" required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <para>
+                        The sort direction of the stack list:
+                        asc | desc
+                    </para>
+                </wadl:doc>
+            </param>
+        </request>
         <response status="200"/>
     </method>
     <method name="POST" id="stack_create">
@@ -141,8 +199,9 @@
         <request>
             <param name="stack_name" style="plain" required="true">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                    xml:lang="EN"><para>The name of the stack to
-                        create.</para></wadl:doc>
+                    xml:lang="EN">
+                    <para>The name of the stack to create.</para>
+                </wadl:doc>
             </param>
             <param name="template_url" style="plain" required="true">
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
