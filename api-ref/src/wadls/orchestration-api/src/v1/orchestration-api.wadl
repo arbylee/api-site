@@ -97,6 +97,9 @@
                             <resource path="template" id="template">
                                 <method href="#stack_template"/>
                             </resource>
+                            <resource path="build_info" id="build_info">
+                                <method href="#build_info"/>
+                            </resource>
                         </resource>
                     </resource>
                 </resource>
@@ -514,6 +517,15 @@
             title="Show event">
             <para role="shortdesc">Gets data about a specified
                 event.</para>
+        </wadl:doc>
+        <response status="200"/>
+    </method>
+    <method name="GET" id="build_info">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook" xml:lang="EN"
+            title="Retrieve build information">
+            <para role="shortdesc">
+                Retrieve build information about the heat deployment.
+            </para>
         </wadl:doc>
         <response status="200"/>
     </method>
