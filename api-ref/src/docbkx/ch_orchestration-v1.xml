@@ -15,6 +15,7 @@
             <wadl:resource
                 href="../wadls/orchestration-api/src/v1/orchestration-api.wadl#stacks">
                 <wadl:method href="#stack_create"/>
+                <wadl:method href="#stack_preview"/>
                 <wadl:method href="#stack_adopt"/>
                 <wadl:method href="#stack_list"/>
             </wadl:resource>
